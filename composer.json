@@ -1,0 +1,20 @@
+{
+    "name": "ziyodulloxon/string-helper",
+    "description": "Do something with your strings",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Ziyodulloxon\\StringHelper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ziyodulloxon Ubaydullayev",
+            "email": "ziyodulloxon@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "ext-mbstring": "*"
+    }
+}
