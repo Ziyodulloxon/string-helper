@@ -16,7 +16,7 @@ class Str
 
     public function length(): int
     {
-        return strlen($this->string);
+        return mb_strlen($this->string);
     }
 
     public function splitToSentences(): Arr
