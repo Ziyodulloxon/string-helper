@@ -1,20 +1,11 @@
 <?php
 
-namespace Ziyodulloxon\StringHelper;
+namespace Ziyodulloxon\StringHelper\Core;
 
 class Arr
 {
     public function __construct(private array $array)
     {
-    }
-
-    public static function __callStatic(string $method, array $arguments)
-    {
-        $class = new \ReflectionClass(__CLASS__);
-        if ($class->hasMethod($method)) {
-            return $class->$method(...$arguments);
-        }
-        throw new \BadMethodCallException("Method [$method] does not exist.");
     }
 
     public function count(): int
@@ -55,5 +46,17 @@ class Arr
     public function join(string $glue = ' '): Str
     {
         return new Str(implode($glue, $this->array));
+    }
+
+    public function get(): array
+    {
+        return $this->array;
+    }
+
+    public function __toString(): string
+    {
+        ob_start();
+        dump($this->array);
+        return ob_get_clean();
     }
 }

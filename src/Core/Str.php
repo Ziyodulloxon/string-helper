@@ -1,20 +1,11 @@
 <?php
 
-namespace Ziyodulloxon\StringHelper;
+namespace Ziyodulloxon\StringHelper\Core;
 
 class Str
 {
-    public function __construct(private string $string)
+    public function __construct(private string $string = "")
     {
-    }
-
-    public static function __callStatic(string $method, array $args)
-    {
-        $class = new \ReflectionClass(self::class);
-        if ($class->hasMethod($method)) {
-            return $class->$method(...$args);
-        }
-        throw new \BadMethodCallException("Method [$method] does not exist.");
     }
 
     public function capitalize(string $string): static
@@ -36,5 +27,10 @@ class Str
     public function splitToWords(): Arr
     {
         return new Arr(explode(" ", $this->string));
+    }
+
+    public function get(): string
+    {
+        return $this->string;
     }
 }
