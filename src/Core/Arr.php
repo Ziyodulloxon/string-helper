@@ -56,7 +56,9 @@ class Arr
     public function __toString(): string
     {
         ob_start();
-        dump($this->array);
+        echo "<pre>";
+        var_dump($this->array);
+        echo "</pre>";
         return ob_get_clean();
     }
 }
